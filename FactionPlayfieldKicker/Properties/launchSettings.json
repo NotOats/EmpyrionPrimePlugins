@@ -1,0 +1,13 @@
+{
+  "profiles": {
+    "FactionPlayfieldKicker": {
+      "commandName": "Project"
+    },
+    "EmpyrionPrime.Launcher": {
+      "commandName": "Executable",
+      "executablePath": "D:\\Development\\EmpyrionPrime\\EmpyrionPrime.Launcher\\bin\\Debug\\net7.0\\EmpyrionPrime.Launcher.exe",
+      "workingDirectory": "D:\\Development\\EmpyrionPrime\\EmpyrionPrime.Launcher\\bin\\Debug\\net7.0",
+      "remoteDebugEnabled": false
+    }
+  }
+}

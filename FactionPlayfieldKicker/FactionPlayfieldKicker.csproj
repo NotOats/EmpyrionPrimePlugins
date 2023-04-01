@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="EmpyrionPrime.ModFramework" Version="1.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Mif">
+      <HintPath>..\dependencies\Mif.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="appsettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="if exist &quot;$(SolutionDir)\..\EmpyrionPrime\EmpyrionPrime.Launcher\bin\Debug\net7.0\Plugins\&quot; and $(ConfigurationName) == Debug (&#xD;&#xA;xcopy &quot;$(TargetDir)&quot; &quot;$(SolutionDir)\..\EmpyrionPrime\EmpyrionPrime.Launcher\bin\Debug\net7.0\Plugins\$(ProjectName)&quot; /s /y /i&#xD;&#xA;)" />
+  </Target>
+
+</Project>
