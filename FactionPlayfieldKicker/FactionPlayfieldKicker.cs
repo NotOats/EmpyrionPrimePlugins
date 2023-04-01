@@ -144,7 +144,7 @@ public sealed class FactionPlayfieldKicker : IEmpyrionPlugin, IDisposable
         if (_disposeCount > 0) return Task.CompletedTask;
 
         if(_playerLocationHistory.TryRemove(e.id, out _))
-            _logger.LogDebug("Player disconnected: EntId {PlayerId}", e);
+            _logger.LogDebug("Player disconnected: EntId {PlayerId}", e.id);
         else
             _logger.LogDebug("Player disconnected: Not found in cache - EntId {PlayerId}", e.id);
 
